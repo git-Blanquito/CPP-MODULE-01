@@ -10,17 +10,22 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
+HumanA::HumanA(std::string name, Weapon &arm) : _weapon(arm)
+{
+	this->_name = name;
+}
 
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+void HumanA::attack(void)
 {
 	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
+			<< " attacks with their " 
+			<< this->_weapon.getType()
+			<< std::endl;
+}
+
+void HumanA::setWeapon(Weapon &str)
+{
+	this->_weapon = str;
 }

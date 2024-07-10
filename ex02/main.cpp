@@ -10,17 +10,21 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
-
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+int main(void)
 {
-	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
+	std::string hi;
+	std::string *stringPTR;
+	std::string &stringREF = hi;
+
+	stringPTR = &hi;
+	hi = "HI THIS IS BRAIN";
+	std::cout << &hi << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+	std::cout << hi << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
+	return (0);
 }

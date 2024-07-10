@@ -10,17 +10,21 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
+# include <string>
+# include <iostream>
 
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+class	Weapon
 {
-	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
-}
+	public:
+		const std::string &getType(void);
+		void setType(std::string str);
+		Weapon(std::string str);
+		Weapon(void);
+	private:
+		std::string	_type;
+};
+
+#endif

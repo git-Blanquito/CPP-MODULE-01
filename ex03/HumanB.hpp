@@ -10,17 +10,22 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMAN_B_HPP
+# define HUMAN_B_HPP
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
+# include <string>
+# include <iostream>
+# include "Weapon.hpp"
 
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+class	HumanB
 {
-	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
-}
+	public:
+		void	attack(void);
+		HumanB(std::string str);
+		void setWeapon(Weapon &str);
+	private:
+		std::string _name;
+		Weapon		*_weapon;
+};
+
+#endif

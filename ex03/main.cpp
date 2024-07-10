@@ -10,17 +10,26 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanB.hpp"
+#include "HumanA.hpp"
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
-
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+int main(void)
 {
-	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+		club.setType("crude spiked club");
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

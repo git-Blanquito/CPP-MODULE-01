@@ -10,17 +10,25 @@
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie::Zombie(std::string name) : _name(name)
-{}
-
-Zombie::Zombie(void)
-{}
-
-void Zombie::announce(void)
+Weapon::Weapon(std::string str)
 {
-	std::cout << this->_name 
-	<< ": BraiiiiiiinnnzzzZ..." 
-	<< std::endl;
+	this->_type = str;
+}
+
+Weapon::Weapon(void)
+{
+	this->_type = "the fists";
+}
+
+const std::string &Weapon::getType(void)
+{
+	const std::string &str = this->_type;
+	return (str);
+}
+
+void Weapon::setType(std::string str)
+{
+	this->_type = str;
 }
