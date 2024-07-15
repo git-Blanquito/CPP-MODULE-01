@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie_Attack
+NAME = Humans_Weapons
 library.h = HumanA.hpp HumanB.hpp Weapon.hpp
 CFLAGS = -Wall -Wextra -Werror
 FILES = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp

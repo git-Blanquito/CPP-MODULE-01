@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Practice
+NAME = Copy_Files
 CFLAGS = -Wall -Wextra -Werror
 FILES = main.cpp
 COMPILED_FILES = main.o
@@ -19,7 +19,7 @@ OBJ = $(FILES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	g++ -o $(NAME) $(CFLAGS) $(OBJ)
+	g++ -g -o $(NAME) $(CFLAGS) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
