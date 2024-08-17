@@ -5,39 +5,20 @@
 /*                                                     +:+ +:+         +:+      */
 /*    By: aiblanco <marvin@42.fr>                    +#+  +:+       +#+         */
 /*                                                 +#+#+#+#+#+   +#+            */
-/*    Created: 2024/06/10 23:05:13 by aiblanco          #+#    #+#              */
-/*    Updated: 2024/06/10 23:05:21 by aiblanco         ###   ########.fr        */
+/*    Created: 2024/08/15 23:05:13 by aiblanco          #+#    #+#              */
+/*    Updated: 2024/08/15 23:05:21 by aiblanco         ###   ########.fr        */
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string name)
+int main(void)
 {
-	this->_name = name;
-	this->_weapon = nullptr;
-}
+	Harl k;
 
-void HumanB::attack(void)
-{
-	if (this->_weapon != nullptr)
-	{
-		std::cout << this->_name 
-				<< " attacks with their " 
-				<< this->_weapon->getType()
-				<< std::endl;
-	} else
-	{
-		std::cout << this->_name 
-				<< " attacks with their fists" 
-				<< std::endl;
-	}
-}
-
-void HumanB::setWeapon(Weapon &str)
-{
-	Weapon *arm;
-
-	arm = &str;
-	this->_weapon = arm;
+	k.complain("DEBUG");
+	k.complain("INFO");
+	k.complain("WARNING");
+	k.complain("ERROR");
+	return (0);
 }

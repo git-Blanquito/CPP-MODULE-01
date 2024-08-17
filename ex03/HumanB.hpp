@@ -20,8 +20,8 @@
 class	HumanB
 {
 	public:
-		void	attack(void);
 		HumanB(std::string str);
+		void	attack(void);
 		void setWeapon(Weapon &str);
 	private:
 		std::string _name;

@@ -20,8 +20,8 @@
 class	HumanA
 {
 	public:
-		void	attack(void);
 		HumanA(std::string str, Weapon &arm);
+		void	attack(void);
 		void setWeapon(Weapon &str);
 	private:
 		std::string _name;

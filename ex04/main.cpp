@@ -20,12 +20,14 @@ int main(int argc, char **argv)
 		std::cout << "ERROR. Please, enter 3 arguments" << std::endl;
 		return (1);
 	}
-
+	//declarations
 	std::string sourceFile(argv[1]);
 	std::string str1(argv[2]);
 	std::string str2(argv[3]);
 	std::string destinationFile = sourceFile + ".replace";
 	std::string line;
+	size_t position;
+	size_t sizeStr1 = str1.length();
 
 	//files descriptors
  	std::ifstream imputFile(sourceFile, std::ios::in);
@@ -41,27 +43,25 @@ int main(int argc, char **argv)
 		imputFile.close();
 		return (1);
 	}
-	
-	size_t position;
-	size_t sizeStr1 = str1.length();
+	//core
     while (std::getline(imputFile, line))
 	{
 		std::string result = "";
 		size_t position = 0;
 		while (position < line.length())
 		{
-			size_t posEncontrado = line.find(str1, position);
+			size_t posFound = line.find(str1, position);
 
-			if (posEncontrado == std::string::npos)
+			if (posFound == std::string::npos)
 			{
 				result.append(line, position, line.length() - position);
 				break;
 			}
 
-			result.append(line, position, posEncontrado - position);
+			result.append(line, position, posFound - position);
 			result.append(str2);
 
-        	position = posEncontrado + sizeStr1;
+        	position = posFound + sizeStr1;
    		}
         outputFile << result << '\n';
     }

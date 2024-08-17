@@ -5,39 +5,34 @@
 /*                                                     +:+ +:+         +:+      */
 /*    By: aiblanco <marvin@42.fr>                    +#+  +:+       +#+         */
 /*                                                 +#+#+#+#+#+   +#+            */
-/*    Created: 2024/06/10 23:05:13 by aiblanco          #+#    #+#              */
-/*    Updated: 2024/06/10 23:05:21 by aiblanco         ###   ########.fr        */
+/*    Created: 2024/08/15 23:05:13 by aiblanco          #+#    #+#              */
+/*    Updated: 2024/08/15 23:05:21 by aiblanco         ###   ########.fr        */
 /*                                                                              */
 /* **************************************************************************** */
 
-#include "HumanB.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-HumanB::HumanB(std::string name)
+# define DEFAULT "\001\033[0m\002"
+# define RED "\001\033[1;91m\002"
+# define YELLOW "\001\033[1;93m\002"
+# define MAGENTA "\001\033[1;95m\002"
+# define GRAY "\001\033[1;90m\002"
+
+# include <string>
+# include <iostream>
+
+class	Harl
 {
-	this->_name = name;
-	this->_weapon = nullptr;
-}
+	public:
+		Harl(void);
+		~Harl(void);
+		void complain(std::string level);
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+};
 
-void HumanB::attack(void)
-{
-	if (this->_weapon != nullptr)
-	{
-		std::cout << this->_name 
-				<< " attacks with their " 
-				<< this->_weapon->getType()
-				<< std::endl;
-	} else
-	{
-		std::cout << this->_name 
-				<< " attacks with their fists" 
-				<< std::endl;
-	}
-}
-
-void HumanB::setWeapon(Weapon &str)
-{
-	Weapon *arm;
-
-	arm = &str;
-	this->_weapon = arm;
-}
+#endif
